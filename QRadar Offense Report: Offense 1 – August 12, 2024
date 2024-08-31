@@ -1,0 +1,52 @@
+QRadar Offense Report: Offense 1 – August 12, 2024
+1. Overview
+This report details Offense 1 detected by QRadar on August 12, 2024. The offense involves multiple login failures for the same user, specifically SSH login attempts that have failed. The incident highlights a brute force attack targeting a Linux server, with significant failed attempts over an extended period.
+2. Offense Details
+    • Offense ID: 1
+    • Magnitude: N/A
+    • Status: Active
+    • Relevance: 4
+    • Severity: 4
+    • Credibility: 3
+    • Description: Multiple Login Failures for the Same User containing User failed to login to SSH
+    • Offense Type: Username
+    • Event/Flow Count: 79,490,550 events and 0 flows in 2 categories
+    • Source IP: 10.0.0.153
+    • Destination IP: 169.254.3.2
+    • Start Time: August 12, 2024, 10:16:02
+    • Duration: 18 days, 9 hours, 45 minutes, 52 seconds
+    • Network: Other
+
+3. Incident Analysis
+- Targeted User: user2
+- Attempts Started: April 19, 2024, and continued until May 15, 2024
+- Total Failed Attempts: Over 109 million failed SSH attempts
+- Notable Source: IP 10.0.0.153, responsible for 212,104 attempts under a single rule trigger
+- Top Categories:
+  - SSH Login Failed: 79,490,547 events
+  - User Login Failure: 3 events
+
+4. Top Sources and Logs
+- Top Source IP:
+  - IP: 10.0.0.153
+  - Location: Net-10-172-192.Net_10_0_0_0
+  - Offenses: 1
+  - Events/Flows: 79,490,550
+- Top Log Sources:
+ - LinuxServer @ redhat1 - 79,490,547 events, 1 offense
+ - Custom Rule Engine-8 :: cyber - 3 events, 8 offenses
+
+5. Annotations and Analysis
+- Annotations:
+  - "Destination/Event Analysis": The source generated a significant number of events, with a high volume score of 10 out of 10.
+  - CRE Event: Detected multiple authentication failures for the same user within a short period, indicating a brute force attempt.
+
+6. Mitigation Strategy
+- Immediate Action: Blacklist IP 10.0.0.153 to prevent further login attempts.
+- Recommendations:
+  - Implement additional security measures on SSH access, such as two-factor authentication.
+  - Review and update firewall rules to limit access to critical servers.
+  - Conduct a detailed investigation into all IP addresses involved in the attack.
+
+7. Conclusion
+This offense report outlines a significant brute force attack targeting SSH login credentials. The high number of failed login attempts indicates an ongoing threat that requires immediate mitigation. Future measures should include strengthening authentication protocols and continuous monitoring to prevent similar incidents.
