@@ -1,0 +1,54 @@
+QRadar Offense Report: Offense 2 – August 12, 2024
+1. Overview
+This report details Offense 2 detected by QRadar on August 12, 2024. The offense involves a successful login from different geographies for the same username on AWSCloud, preceded by suspicious AWS API invocations and mass creation of EC2 instances. The offense highlights potential misuse of cloud credentials and unauthorized activities within AWS services.
+2. Offense Details
+    • Offense ID: 2
+    • Magnitude: N/A
+    • Status: Active
+    • Relevance: 5
+    • Severity: 10
+    • Credibility: 4
+    • Description: Detected A Successful Login From Different Geographies For the Same Username - AWSCloud
+    • Event/Flow Count: 28,085,723 events and 0 flows in 9 categories
+    • Source IPs: Multiple (4)
+    • Destination IPs: Local (2) 169.254.3.2
+    • Start Time: August 12, 2024, 10:20:12
+    • Duration: 18 days, 4 hours, 33 minutes, 40 seconds
+    • Network: Multiple (2)
+3. Incident Analysis
+- Targeted User: userD
+- The offense indicates multiple suspicious activities including successful logins from different geographies, AWS API calls from Kali, and mass creation of EC2 instances.
+- Key activities:
+  - Successful logins from multiple locations.
+  - AWS API invoked from unrecognized environments (e.g., Kali Linux).
+  - Mass creation of virtual machines (EC2 instances) suggesting potential misuse.
+- Top Categories:
+  - Virtual Machine Creation Attempt: 25,764,300 events
+  - Object Download Attempt: 257,642 events
+  - Misc Login Succeeded: 11 events
+  - Suspicious Activity: 517,919 events
+4. Top Sources and Logs
+- Top Source IPs:
+  - 192.168.0.15 (Local Network)
+  - 89.223.26.52 (Russian Federation)
+  - 193.184.16.214 (Finland)
+  - 169.254.3.2 (Local Network)
+- Top Log Sources:
+  - AWS Syslog @ 192.168.0.17 - 26,794,864 events, 1 offense
+  - Custom Rule Engine-8 :: cyber - 775,573 events, 8 offenses
+  - Cisco IronPort @ 192.168.0.15 - 257,643 events, 1 offense
+  - WindowsAuthServer @ IE8WIN7 - 257,643 events, 1 offense
+5. Annotations and Analysis
+- Annotations:
+ - CRE Event: Detected successful login from multiple geographies, indicating potential shared or stolen credentials.
+ - CRE Event: AWS API was invoked from an untrusted environment (Kali), suggesting unauthorized cloud access.
+ - CRE Event: Mass creation of EC2 instances detected, indicating abnormal or unauthorized resource provisioning.
+
+6. Mitigation Strategy
+- Immediate Action: Review AWS security configurations, specifically multi-factor authentication and API permissions.
+- Recommendations:
+  - Implement geo-blocking for AWS logins or set up additional verification for unusual access locations.
+  - Restrict API calls from untrusted environments and monitor access logs closely.
+  - Conduct a thorough investigation of the created instances and ensure no unauthorized data transfers occurred.
+7. Conclusion
+This offense report outlines significant unauthorized activities within AWS, highlighting potential credential misuse and cloud resource exploitation. Immediate action is required to mitigate the risks, including strengthening security measures and implementing robust monitoring solutions.
