@@ -1,0 +1,53 @@
+QRadar Offense Report: Offense 3 – August 12, 2024
+1. Overview
+This report details Offense 3 detected by QRadar on August 12, 2024. The offense involves detected cryptocurrency mining activity based on a threat name identified as a virus. This incident indicates unauthorized use of system resources for mining operations, potentially involving malware.
+2. Offense Details
+    • Offense ID: 3
+    • Magnitude: N/A
+    • Status: Active
+    • Relevance: 4
+    • Severity: 8
+    • Credibility: 3
+    • Description: Detected a Cryptocurrency Mining Activity Based on Threat Name (Experience Center) containing Virus Found
+    • Offense Type: EC Threat Name (custom)
+    • Event/Flow Count: 15,867,017 events and 0 flows in 2 categories
+    • Source IP: 172.16.0.10
+    • Destination IP: 172.16.123.123
+    • Start Time: August 12, 2024, 10:20:13
+    • Duration: 18 days, 4 hours, 33 minutes, 39 seconds
+    • Network: Net-10-172-192.Net_172_16_0_0
+
+3. Incident Analysis
+- Targeted Threat: Trojan.JS.Miner.m
+- The offense is characterized by high volumes of events indicating cryptocurrency mining activity.
+- Top Categories:
+  - Virus Detected: 15,716,120 events
+  - Information: 150,897 events
+4. Top Sources and Logs
+- Top Source IP:
+  - IP: 172.16.0.10
+  - Location: Net-10-172-192.Net_172_16_0_0
+  - Offenses: 1
+  - Events/Flows: 15,867,017
+- Top Destination IPs:
+  - IP: 172.16.123.123
+  - Location: Net-10-172-192.Net_172_16_0_0
+  - Offenses: 1
+  - Events/Flows: 15,867,017
+- Top Log Sources:
+ - KasperskySecurityCenter @ 172.16.0.1 - 15,716,120 events, 1 offense
+ - Custom Rule Engine-8 :: cyber - 150,897 events, 8 offenses
+
+5. Annotations and Analysis
+- Annotations:
+ - CRE Event: Detected a cryptocurrency mining activity based on threat name, highlighting unauthorized resource utilization.
+ - Event Analysis: The number of events generated during this attack indicates a high-volume operation, with a rating of 10 out of 10.
+
+6. Mitigation Strategy
+- Immediate Action: Quarantine affected systems and terminate all suspicious processes related to mining activities.
+- Recommendations:
+  - Conduct a full malware scan on affected machines and update antivirus definitions.
+  - Monitor network traffic for signs of unauthorized resource usage.
+  - Review and tighten access controls to prevent further unauthorized activities.
+7. Conclusion
+This offense highlights significant concerns regarding unauthorized cryptocurrency mining within the network, indicating potential malware infection and resource exploitation. Immediate measures are required to secure affected systems and prevent future incidents.
